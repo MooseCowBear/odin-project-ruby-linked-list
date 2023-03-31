@@ -83,6 +83,9 @@ class LinkedList
   end
 
   def at(index)
+    index = convert_index(index, true)
+    return nil if index.nil?
+    
     i = 0
     curr = self.head
 
@@ -249,6 +252,8 @@ puts my_list # => ( 5 ) -> ( 2 ) -> ( 7 ) -> ( 6 ) -> nil
 
 my_list.remove_at(-1)
 puts my_list  # => ( 5 ) -> ( 2 ) -> ( 7 ) -> nil
+
+puts my_list.at(-3).value # => 5
 
 begin 
   my_list.insert_at(100, 10)
