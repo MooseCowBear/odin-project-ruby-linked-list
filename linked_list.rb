@@ -127,7 +127,19 @@ class LinkedList
   end
 
   def remove_at(index)
-    
+    index = convert_index(index, true)
+    raise RangeError if index.nil?
+
+    removed = nil
+    if index == 0
+      removed = root
+      root = root.next
+    else
+      node_before = at(index - 1)
+      removed = node_before.next
+      node_before.next.update_next(node_before.next.next) #if removing last, then end points to nil so node before end now points to nil
+    end
+    remove
   end
 
   def convert_index(index, remove = false)
