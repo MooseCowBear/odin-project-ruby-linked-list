@@ -108,4 +108,36 @@ class LinkedList
     list << "nil"
     list.join(" ")
   end
+
+  def insert_at(value, index)
+    index = convert_index(index)
+    raise RangeError if index.nil?
+    
+    new_node = Node.new(value)
+    if index == size
+      self.append(new_node)
+    elsif index == 1
+      self.prepend(new_node)
+    else 
+      node_before = self.at(index - 1)
+      new_node.update_next(node_before.next)
+      node_before.next = new_node
+    end
+    self
+  end
+
+  def remove_at(index)
+    
+  end
+
+  def convert_index(index, remove = false)
+    size = self.size
+    last_index = remove ? size - 1 : size
+    if index < 0 && index.between?(-1, -size) #insert at 0 is ok bc pushes everyone down
+      return size + index
+    elsif index >= 0 && index.between?(0, last_index) #to allow for appending to end want == to size ok
+      return index
+    end
+    nil
+  end
 end
