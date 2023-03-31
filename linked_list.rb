@@ -26,7 +26,11 @@ class LinkedList
   end
 
   def prepend(value)
-
+    head = self.head
+    new_node = Node.new(value)
+    new_node.update_next(head)
+    self.root = new_node
+    self
   end
 
   def size
