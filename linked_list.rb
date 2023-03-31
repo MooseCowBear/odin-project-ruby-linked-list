@@ -34,7 +34,13 @@ class LinkedList
   end
 
   def size
-
+    count = 0
+    curr = self.head
+    until curr.next.nil?
+      count += 1
+      curr = curr.next
+    end
+    count
   end
 
   def head
