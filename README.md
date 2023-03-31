@@ -24,3 +24,4 @@ A ruby implementation of a linked list.
 - #remove_at(index)
 
   Both #insert_at and #remove_at accept negative indices. 
+  Raises RangeError if index exceeds list size. 
