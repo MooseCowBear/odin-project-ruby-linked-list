@@ -4,12 +4,15 @@ class Node
     @next_node = nil
   end
 
+  attr_reader :value
+
   def update_next(new_next)
     self.next_node = new_next
   end
 
   private
-  attr_accessor :value, :next_node
+
+  attr_accessor :next_node
 end
 
 class LinkedList
@@ -76,19 +79,26 @@ class LinkedList
     old_tail 
   end
 
-  def at_index(index)
-    
-  end
-
   def contains?(value)
-
+    return !find(value).nil?
   end
 
   def find(value)
-
+    index = 0
+    found = false
+    curr = self.head
+    unless curr.nil? || found
+      if curr.value == value
+        found = true
+      else
+        index += 1
+        curr = curr.next
+      end
+    end
+    found ? index : nil
   end
 
   def to_s
-
+    
   end
 end
