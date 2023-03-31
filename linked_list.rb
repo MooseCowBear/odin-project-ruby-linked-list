@@ -44,11 +44,14 @@ class LinkedList
   end
 
   def head
-  
+    root
   end
 
   def tail
-
+    curr = self.head
+    until curr.next.nil?
+      curr = curr.next
+    end
   end
 
   def at(index)
