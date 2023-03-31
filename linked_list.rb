@@ -19,7 +19,10 @@ class LinkedList
 
   attr_accessor :root
   def append(value)
-
+    tail = self.tail
+    new_node = Node.new(value)
+    tail.update_next(new_node)
+    self 
   end
 
   def prepend(value)
@@ -55,7 +58,7 @@ class LinkedList
   end
 
   def find(value)
-    
+
   end
 
   def to_s
