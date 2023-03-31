@@ -139,7 +139,7 @@ class LinkedList
       removed = node_before.next
       node_before.next.update_next(node_before.next.next) #if removing last, then end points to nil so node before end now points to nil
     end
-    remove
+    removed
   end
 
   def convert_index(index, remove = false)
