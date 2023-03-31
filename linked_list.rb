@@ -62,7 +62,7 @@ class LinkedList
   def at(index)
     i = 0
     curr = self.head
-    while i < index && !curr.nil?
+    while i < index && curr
       i += 1
       curr = curr.next
     end
@@ -99,6 +99,13 @@ class LinkedList
   end
 
   def to_s
-    
+    list = []
+    curr = self.head
+    while curr
+      list << "( #{curr.head} )"
+      list << "->"
+    end
+    list << "nil"
+    list.join(" ")
   end
 end
