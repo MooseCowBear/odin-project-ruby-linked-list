@@ -55,7 +55,13 @@ class LinkedList
   end
 
   def at(index)
-
+    i = 0
+    curr = self.head
+    while i < index && !curr.nil?
+      i += 1
+      curr = curr.next
+    end
+    return curr
   end
 
   def pop
