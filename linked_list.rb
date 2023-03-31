@@ -12,3 +12,53 @@ class Node
   attr_accessor :value, :next_node
 end
 
+class LinkedList
+  def initialize(root = nil)
+    @root = root
+  end
+
+  attr_accessor :root
+  def append(value)
+
+  end
+
+  def prepend(value)
+
+  end
+
+  def size
+
+  end
+
+  def head
+  
+  end
+
+  def tail
+
+  end
+
+  def at(index)
+
+  end
+
+  def pop
+    
+  end
+
+  def at_index(index)
+
+  end
+
+  def contains?(value)
+
+  end
+
+  def find(value)
+    
+  end
+
+  def to_s
+
+  end
+end
