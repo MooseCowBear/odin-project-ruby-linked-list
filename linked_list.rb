@@ -18,6 +18,7 @@ class LinkedList
   end
 
   attr_accessor :root
+
   def append(value)
     tail = self.tail
     new_node = Node.new(value)
@@ -52,6 +53,7 @@ class LinkedList
     until curr.next.nil?
       curr = curr.next
     end
+    curr
   end
 
   def at(index)
@@ -61,15 +63,21 @@ class LinkedList
       i += 1
       curr = curr.next
     end
-    return curr
+    curr
   end
 
   def pop
-    
+    new_tail = self.head
+    until new_tail.next.next.nil?
+      new_tail = tail.next
+    end
+    old_tail = new_tail.next
+    new_tail.update_next(nil)
+    old_tail 
   end
 
   def at_index(index)
-
+    
   end
 
   def contains?(value)
